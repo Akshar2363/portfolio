@@ -12,8 +12,8 @@ const Timeline = () => {
         <div className={`flex flex-col justify-end md:bg-[url('${blackBg1}')] bg-[url('${blackBg2}')] backdrop-blur-xl h-[200px] lg:bg-cover bg-left text-white`}>
           
           <div className="path p-10">
-            <p>Home &nbsp;<FontAwesomeIcon icon={faAngleRight}/> &nbsp; About</p>
-            <p className='text-5xl pb-3 pt-5'><strong>About</strong></p>
+            <p>Home &nbsp;<FontAwesomeIcon icon={faAngleRight}/> &nbsp; Timeline</p>
+            <p className='text-5xl pb-3 pt-5'><strong>Timeline</strong></p>
             <button disabled className='bg-white rounded-xl mr-2 w-[50px] h-[10px]'></button>
             <button disabled className='bg-white rounded-xl animate-pulse mr-2 w-[10px] h-[10px]'></button>
             <button disabled className='bg-white rounded-xl animate-pulse mr-2 w-[10px] h-[10px]'></button>

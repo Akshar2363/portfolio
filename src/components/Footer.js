@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
         
-    <div className="footer fixed right-0 bottom-0 text-white my-2 flex flex-row items-center justify-end w-full md:w-[85%]">
+    <div className="footer z-40 fixed right-0 bottom-0 text-white my-2 flex flex-row items-center justify-end w-full md:w-[85%]">
         
         <button disabled className='bg-white rounded-xl mr-2 w-[75%] h-[2px]'></button>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://www.hackerrank.com/anmolksharma2003?hr_r=1"><FontAwesomeIcon icon={faHackerrank}/></Link></div>

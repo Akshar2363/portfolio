@@ -2,20 +2,21 @@ import React from 'react'
 import "../includes/css/home.css"
 import blackBg1 from '../includes/images/bgBlackMd.png'
 import blackBg2 from '../includes/images/bgBlackSm.png'
-import programComp from '../includes/images/programming.png'
 import Typewriter from "typewriter-effect"
 import Footer from './Footer'
 import TsParticles from './TsParticles'
-
+import Resume from '../documents/Resume_Anmol_Kumar_Sharma.pdf'
+import { Link } from 'react-router-dom'
 const Home = () => {
 
 
-  
 
   return (
     
+    
+
     <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
-        <TsParticles/>
+      <TsParticles />
       <div className={`z-10 flex flex-col justify-end md:bg-[url('${blackBg1}')] bg-[url('${blackBg2}')] backdrop-blur-xl h-[200px] lg:bg-cover bg-left text-white`}>
 
         <div className="path p-10">
@@ -28,19 +29,24 @@ const Home = () => {
         </div>
 
       </div>
-      <div  className='z-10 text-white px-4 md:p-2 md:mx-8 flex flex-col md:flex-row items-center justify-center'>
-      <section id="homescreen" class="m-0 justify-end text-gray-100 "></section>
+      <div className='z-10 text-white px-4 md:p-2 md:mx-8 flex flex-col lg:flex-row items-center justify-between'>
 
+        <div className="programming-img w-full lg:w-[50%] p-4 mb-8 md:m-0 flex flex-col items-start justify-center h-fit">
+          <div className='text-md lg:text-2xl text-xl inline-flex'><span className='text-rose-400'>Hey There!</span><div className='text-3xl wave h-fit w-fit'>👋</div></div>
+          <h2 className='text-md lg:text-2xl text-xl'><span className='text-green-300'>This is, </span></h2>
+          <h2 className='text-md text-green-700 lg:text-7xl text-5xl'><span className='text-yellow-500'>Anmol </span> <span className='text-yellow-700'>Sharma</span></h2>
+          <h2 className='text-md text-blue-400 lg:text-2xl text-xl'>I am a 3<sup>rd</sup>-year student at NIT Sikkim</h2>
+          <h2 className='text-md text-green-400 lg:text-xl text-lg'>I am a web developer with good programming skills, and I am seeking internship opportunities...</h2>
+        </div>
 
+        <div className="z-10 typingText m-2 p-2 border  h-[200px] sm:h-[180px] w-[100%] lg:w-[50%] md:h-[200px] lg:h-[250px] text-left md:text-md lg:text-xl ">
 
-        <div className="z-10 typingText m-2 p-2 border  h-[200px] sm:h-[175px] w-[100%] md:h-[275px] lg:h-[225px] text-left md:text-md lg:text-xl ">
-          
           <Typewriter
             options={{
               loop: false,
               cursor: "_",
             }}
-            
+
             onInit={(typewriter) => {
 
               const stringArr = [
@@ -60,15 +66,18 @@ const Home = () => {
 
             }}
           />
-          
-          
-          </div>
-        <div className="programming-img w-full md:w-[50%] p-4 mb-8 md:m-0 flex items-center justify-center ">
-          <img src={programComp} className="z-10 md:w-[250px] hover:scale-105 duration-300 " alt="" />
+
+
         </div>
-          
+        
+
       </div>
-      <Footer />
+      <div className="pl-4 md:pl-8 pb-12 ">
+        <div className="text-rose-500 my-2 lg:text-2xl text-lg">Know More About Me! </div>
+        <div className="text-blue-500 my-2 pb-2 lg:text-2xl text-lg">Have a look at my <span className='text-orange-500'>Resume...</span> </div>
+        <div className='z-10'><Link to={Resume} target="_blank" className=' relative text-xl border border-green-700 text-green-700 hover:bg-green-700 hover:text-green-400 p-2 rounded-xl'>Resume</Link></div>
+      </div>
+      <Footer/>
     </div>
   )
 }

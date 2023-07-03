@@ -15,12 +15,13 @@ import Timeline from './components/Timeline';
 
 
 function App() {
-  return (
-    <div className="App">
 
+ 
+  return (
+    <div className={`App `}>
       <Router>
         <Navbar/>
-      <Routes>
+        <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/timeline" element={<Timeline/>}/>

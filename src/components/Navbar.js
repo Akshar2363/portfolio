@@ -6,9 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptop,faCircleInfo, faContactBook, faHome, faLaptopCode, faTimeline } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
 
-
   const location = useLocation();
 
+ 
+  if(location.pathname === '/')  document.title = "Portfolio | Home";
+  if(location.pathname === '/about')  document.title = "Portfolio | About";
+  if(location.pathname === '/timeline')  document.title = "Portfolio | Timeline";
+  if(location.pathname === '/contact')  document.title = "Portfolio | Contact";
+  if(location.pathname === '/projects')  document.title = "Portfolio | Project";
+  if(location.pathname === '/skills')  document.title = "Portfolio | Skills";
+
+  //Toggle Menu Function
   const toggleMenu = (e) =>{
     var navbar = document.getElementById('navbar-items');
     var menuBtn = document.getElementById('menu-btn');
@@ -18,12 +26,11 @@ const Navbar = () => {
   }
 
 
-  
 
   return (
     
-      <div className='fixed flex flex-col md:flex-row w-[100%] md:w-[15%] z-30'>
-        <div className="navbar z-20 bg-slate-800 flex items-center md:justify-content-start md:items-start justify-between pr-2 md:pr-0 md:justify-center h-[80px] md:h-[100vh] shadow-sm md:shadow-lg shadow-gray-800">
+      <div className='fixed flex flex-col md:flex-row w-[100%] md:w-[15%] z-50'>
+        <div className="navbar z-40 bg-slate-800 flex items-center md:justify-content-start md:items-start justify-between pr-2 md:pr-0 md:justify-center h-[80px] md:h-[100vh] shadow-sm md:shadow-lg shadow-gray-800">
           <Link className="md:hidden"to="/"><img className='h-[50px]' src={logo} alt="" /></Link>
             <div className="flex flex-col py-4 px-2 md:hidden" id="menu-btn" onClick={toggleMenu}>
                 <div className='bg-red-800 rounded-xl h-[5px] w-[40px] bar1 m-0.5'></div>
@@ -56,7 +63,6 @@ const Navbar = () => {
                 </div>
               </ul>
           </div>
-          
       </div>
   )
 }
