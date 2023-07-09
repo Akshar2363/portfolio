@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../includes/css/home.css"
 import blackBg1 from '../includes/images/bgBlackMd.png'
 import blackBg2 from '../includes/images/bgBlackSm.png'
@@ -14,21 +14,81 @@ import leetcode from '../includes/icons/leetcodeColor.svg';
 import whatsapp from '../includes/icons/whatsapp.svg';
 import gmail from '../includes/icons/gmail.svg';
 import { Link } from 'react-router-dom';
+import Alert from './Alert';
+
+import validator from 'validator';
+
 const Contact = () => {
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxJ2EmYnzNIN_aXziTJFfG0GHstbpUu0cSF4aZ3gBRoHeVrii-w7wizlQcceUgdA4A7/exec'
 
-    const submitContactForm = async (e) => {
+    var [alert, setAlert] = useState(false);
+    var [alertMsg, setAlertMsg] = useState("");
+    var [alertType, setAlertType] = useState("");
 
-        const form = document.forms['submit-to-google-sheet']
+    var formData = {name:"", email:"", contact:"", message:""}; 
+
+    const onChange = (parameter) =>{
+
+        var value = document.getElementById(parameter).value;
+        if(parameter === "Name") formData.name = value;
+        else if(parameter === "Email") formData.email = value;
+        else if(parameter === "Contact") formData.contact = value;
+        else  if(parameter === "Message") formData.message = value;
+
+        console.log(formData);
+    }
+
+    const toggleAlert = () =>{
+        setAlert(true)
+        setTimeout(()=>{setAlert(false)},2500);
+    }
+
+
+
+    const submitForm = async(e) => {
+
+        document.getElementById('contactFormSubmit').disabled = true;
+        setTimeout(()=>{
+            document.getElementById('contactFormSubmit').disabled = false;
+        },3000)
+        
+        toggleAlert();
+        console.log(alert);
         e.preventDefault();
+        const form = document.forms['submit-to-google-sheet']
+        //Form Validation
+        alertMsg = "";
+        alertType = "";
+        if(!validator.isByteLength(formData.name, {min : 3})) alertMsg="Name must have minimum 3 characters!";
+        else if(!validator.isByteLength(formData.name, {max : 50})) alertMsg="Name must have maximim 50 characters!";
+        else if(!validator.isEmail(formData.email)) alertMsg="Please Enter a valid email";
+        else if(!validator.isByteLength(formData.contact, {min : 10, max:10})) alertMsg="Invalid Contact Number";
+        else if(!validator.isByteLength(formData.message, {min : 10})) alertMsg="Message must have minimum 10 characters!";
+        else if(!validator.isByteLength(formData.message, {max:250})) alertMsg="Message must have and maximum 250 characters!";
+        
+        console.log(alertMsg);
+
+        if(alertMsg!==""){
+            setAlertType("Invalid");
+            setAlertMsg(alertMsg);
+            return;
+        }
+        
+        //Form Submit 
+
+
+        alertMsg = "Form submitted successfully";
+        setAlertType("Success");
+        setAlertMsg(alertMsg);
         const formDetails = new FormData(form);
         form.reset();
 
         await fetch(scriptURL, {
             method: 'POST',
             body: formDetails
-        }).then(response => console.log({success: true, response})).catch(error => console.error({success: false, error: error.message}))
+        }).then(response => console.log({success: true, response})).catch(error => console.error({success: false, error: error.message}));
+
     }
 
 
@@ -54,8 +114,7 @@ const Contact = () => {
 
 
             <div className="contactPage px-2 md:p-2 md:mx-8">
-                <div className="contact-head-text text-white text-center text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
-
+                <div className="relative contact-head-text text-white text-center text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
                 <div className='flex text-white flex-col lg:flex-row items-center justify-between'>
 
                     <div className="contact-form border border-white p-2 rounded-xl w-full lg:w-[50%] ">
@@ -64,14 +123,14 @@ const Contact = () => {
                         </div>
                         <hr/>
                         <form id="contactForm" className="flex flex-col my-2 items-center just0fy-center" name="submit-to-google-sheet">
-                            <input className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' name="Name" type="text" placeholder="Name"/>
-                            <input className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' name="Email" type="email" placeholder="Email"/>
-                            <input className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' name="Contact" type="number" placeholder="Contact"/>
-                            <input className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' name="Message" type="text" placeholder="Message"/>
-                            <button type="submit" id="contactFormSubmit" className='z-10 border border-white w-[100px] text-wihte p-2 rounded-xl hover:bg-gray-800 '
-                                onClick={submitContactForm}>Send</button>
+                            <input onChange = {()=>onChange("Name")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Name" name="Name" type="text" placeholder="Name"/>
+                            <input onChange = {()=>onChange("Email")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Email" name="Email" type="email" placeholder="Email"/>
+                            <input onChange = {()=>onChange("Contact")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Contact" name="Contact" type="number" placeholder="Contact"/>
+                            <input onChange = {()=>onChange("Message")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Message" name="Message" type="text" placeholder="Message"/>
+                            {!alert && <button type="submit" id="contactFormSubmit" className='z-10 border border-white w-[100px] text-wihte p-2 rounded-xl hover:bg-gray-800'
+                                onClick={submitForm}>Send</button>}
                         </form>
-
+                    {alert && <Alert message={alertMsg} type={alertType}/>}
                     </div>
                     <div className="contact-details w-full  lg:w-[50%] p-2 m-2 text-justify">
 
@@ -95,11 +154,11 @@ const Contact = () => {
                         <div className="socialProfiles flex flex-col my-4">
                             <div className='text-2xl text-cyan-500 text-center p-2'>Contact Me...</div>
                             <div className="socialProfiles-body flex flex-row flex-wrap items-center justify-around">
-                                <Link className="z-10 flex flex-row text-sm my-2  sm:text-lg" to='mailto:anmolksharma2003@gmail.com'><img className="w-[24px]" src={gmail} alt=""/> &nbsp; anmolksharma2003@gmail.com</Link>
-                                <Link className="z-10 flex flex-row text-sm my-2  sm:text-lg" to='tel:+91-9771729061'><img className="w-[24px]" src={whatsapp} alt=""/> &nbsp;+91-9771729061</Link>
+                                <Link className="z-10 flex flex-row text-xs my-2  sm:text-lg" to='mailto:anmolksharma2003@gmail.com'><img className="w-[24px]" src={gmail} alt=""/> &nbsp; anmolksharma2003@gmail.com</Link>
+                                <Link className="z-10 flex flex-row text-xs my-2  sm:text-lg" to='tel:+91-9771729061'><img className="w-[24px]" src={whatsapp} alt=""/> &nbsp;+91-9771729061</Link>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>

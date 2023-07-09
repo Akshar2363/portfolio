@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://www.hackerrank.com/anmolksharma2003?hr_r=1"><FontAwesomeIcon icon={faHackerrank}/></Link></div>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://github.com/Akshar2363"><FontAwesomeIcon icon={faGithub} /></Link></div>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://www.linkedin.com/in/anmol-kumar-sharma-2706b4228/"><FontAwesomeIcon icon={faLinkedin} /></Link></div>
-        <div className='text-xl md:text-2xl pl-3 md:pl-5 '><Link to="https://leetcode.com/Anmol2363/"><LeetCodeLogo/></Link></div>
+        <div className='text-xl md:text-2xl pl-3 md:pl-5'><Link to="https://leetcode.com/Anmol2363/"><LeetCodeLogo/></Link></div>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://www.facebook.com/Anmol2363/"><FontAwesomeIcon icon={faFacebook} /></Link></div>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="https://www.instagram.com/aksharma_2363/"><FontAwesomeIcon icon={faInstagram} /></Link></div>
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="mailto:anmolksharma2003@gmail.com.com"><FontAwesomeIcon icon={faEnvelope} /></Link></div>
