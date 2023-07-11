@@ -26,7 +26,7 @@ const Contact = () => {
     var [alertMsg, setAlertMsg] = useState("");
     var [alertType, setAlertType] = useState("");
 
-    var formData = {name:"", email:"", contact:"", message:""}; 
+    var [formData, setFormData] = useState({name:"", email:"", contact:"", message:""}); 
 
     const onChange = (parameter) =>{
 
@@ -48,11 +48,6 @@ const Contact = () => {
 
     const submitForm = async(e) => {
 
-        document.getElementById('contactFormSubmit').disabled = true;
-        setTimeout(()=>{
-            document.getElementById('contactFormSubmit').disabled = false;
-        },3000)
-        
         toggleAlert();
         console.log(alert);
         e.preventDefault();
@@ -67,8 +62,9 @@ const Contact = () => {
         else if(!validator.isByteLength(formData.message, {min : 10})) alertMsg="Message must have minimum 10 characters!";
         else if(!validator.isByteLength(formData.message, {max:250})) alertMsg="Message must have and maximum 250 characters!";
         
+        setFormData(formData);
         console.log(alertMsg);
-
+        
         if(alertMsg!==""){
             setAlertType("Invalid");
             setAlertMsg(alertMsg);
@@ -76,8 +72,6 @@ const Contact = () => {
         }
         
         //Form Submit 
-
-
         alertMsg = "Form submitted successfully";
         setAlertType("Success");
         setAlertMsg(alertMsg);
@@ -89,6 +83,7 @@ const Contact = () => {
             body: formDetails
         }).then(response => console.log({success: true, response})).catch(error => console.error({success: false, error: error.message}));
 
+        setFormData({name:"", email:"", contact:"", message:""});
     }
 
 
@@ -113,20 +108,20 @@ const Contact = () => {
             </div>
 
 
-            <div className="contactPage px-2 md:p-2 md:mx-8">
-                <div className="relative contact-head-text text-white text-center text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
+            <div className="contactPage flex flex-col px-2 md:p-2 md:mx-8">
+                <div className="relative -z-10 self-center w-fit contact-head-text text-white text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
                 <div className='flex text-white flex-col lg:flex-row items-center justify-between'>
 
                     <div className="contact-form border border-white p-2 rounded-xl w-full lg:w-[50%] ">
-                        <div className="form-title m-2 p-2 text-center">
+                        <div className="form-title m-2 p-2 text-2xl text-center">
                             Lets Connect!
                         </div>
                         <hr/>
                         <form id="contactForm" className="flex flex-col my-2 items-center just0fy-center" name="submit-to-google-sheet">
-                            <input onChange = {()=>onChange("Name")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Name" name="Name" type="text" placeholder="Name"/>
-                            <input onChange = {()=>onChange("Email")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Email" name="Email" type="email" placeholder="Email"/>
-                            <input onChange = {()=>onChange("Contact")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Contact" name="Contact" type="number" placeholder="Contact"/>
-                            <input onChange = {()=>onChange("Message")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Message" name="Message" type="text" placeholder="Message"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Name")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Name" name="Name" type="text" placeholder="Name"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Email")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Email" name="Email" type="email" placeholder="Email"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Contact")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Contact" name="Contact" type="number" placeholder="Contact"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Message")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Message" name="Message" type="text" placeholder="Message"/>
                             {!alert && <button type="submit" id="contactFormSubmit" className='z-10 border border-white w-[100px] text-wihte p-2 rounded-xl hover:bg-gray-800'
                                 onClick={submitForm}>Send</button>}
                         </form>

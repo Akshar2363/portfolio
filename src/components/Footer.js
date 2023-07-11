@@ -19,8 +19,6 @@ const Footer = () => {
         <div className='text-lg md:text-2xl pl-3 md:pl-5'><Link to="mailto:anmolksharma2003@gmail.com.com"><FontAwesomeIcon icon={faEnvelope} /></Link></div>
         <div className='text-md md:text-lg pl-3 md:pl-5 pr-3'><Link to="tel:+919771729061"><FontAwesomeIcon icon={faPhone} /></Link></div>
         <button disabled className='bg-white rounded-xl mr-2 w-[25%] h-[2px]'></button>
-
-
     </div>
   )
 }

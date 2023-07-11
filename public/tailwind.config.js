@@ -41,6 +41,7 @@ tailwind.config = {
       'Segoe UI Symbol', 
       'Noto Color Emoji'
     ]
-      }
+      },
+      
     }
   }

@@ -18,11 +18,16 @@ const Navbar = () => {
 
   //Toggle Menu Function
   const toggleMenu = (e) =>{
+    e.preventDefault();
     var navbar = document.getElementById('navbar-items');
     var menuBtn = document.getElementById('menu-btn');
+    var overlay = document.getElementById('overlay');
     menuBtn.classList.toggle("btn-open");
     navbar.classList.toggle('hidden');
-    e.preventDefault();
+    overlay.classList.toggle('hidden');
+
+    
+
   }
 
 
@@ -63,6 +68,7 @@ const Navbar = () => {
                 </div>
               </ul>
           </div>
+              <div id="overlay" className='hidden' onClick={toggleMenu}></div>
       </div>
   )
 }
