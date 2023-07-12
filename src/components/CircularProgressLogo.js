@@ -24,7 +24,7 @@ const CircularProgressLogo = (props) => {
                         // Customize the path, i.e. the "completed progress"
                         path: {
                           // Path color
-                          stroke: `${Percentage>=80?"rgba(62, 152, 199," + Percentage / 100:(Percentage>=60?"orange":"red")}`,
+                          stroke: `${Percentage>=80?"#3e98c7":(Percentage>=60?"orange":"red")}`,
                           // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
                           strokeLinecap: 'round',
                           // Customize transition animation
@@ -55,9 +55,10 @@ const CircularProgressLogo = (props) => {
                         },
                         
                     }}>
-                    <div className={`absolute -z-1 w-full h-full flex flex-row items-center justify-center progressPercentage text-sm lg:text-xl  opacity-${PercentageOpacity} hover:opacity-${100-PercentageOpacity} transition-[1s_ease-in-out]`}>
+                    <div className={`absolute -z-1 w-full h-full flex flex-col items-center justify-center progressPercentage  opacity-${PercentageOpacity} hover:opacity-${100-PercentageOpacity} transition-[1s_ease-in-out]`}>
 
-                      <div>{props.percentage} %</div>
+                      <div className='text-[15px] sm:text-xs md:text-2xl'>{props.percentage}%</div>
+                      <div className='lg:flex hidden'>{props.text}</div>
                     </div>
              </CircularProgressbarWithChildren>
             </div>

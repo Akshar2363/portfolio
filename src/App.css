@@ -6,13 +6,12 @@
 
 body {
   margin: 0;
-
-    font-family: 'Gochi Hand', cursive;
-    font-family: 'Kameron', serif; 
-    background-color:black;
-    letter-spacing: 3px; 
-    font-weight: bold;
-  }
+  font-family: 'Gochi Hand', cursive;
+  font-family: 'Kameron', serif; 
+  background-color:black;
+  letter-spacing: 3px; 
+  font-weight: bold;
+}
 
 /* ---- reset ---- */
 canvas {

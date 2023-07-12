@@ -3,8 +3,8 @@ import "../includes/css/home.css"
 import blackBg1 from '../includes/images/bgBlackMd.png'
 import blackBg2 from '../includes/images/bgBlackSm.png'
 import Typewriter from "typewriter-effect"
-import Footer from './Footer'
-import TsParticles from './TsParticles'
+import Footer from '../components/Footer'
+import TsParticles from '../components/TsParticles'
 import Resume from '../documents/Resume_Anmol_Kumar_Sharma.pdf'
 import { Link } from 'react-router-dom'
 const Home = () => {
@@ -39,7 +39,7 @@ const Home = () => {
           <h2 className='text-md text-green-400 lg:text-xl text-lg'>I am a web developer with good programming skills, and I am seeking internship opportunities...</h2>
         </div>
 
-        <div className="z-10 typingText m-2 p-2 border  h-[200px] sm:h-[180px] w-[100%] lg:w-[50%] md:h-[200px] lg:h-[250px] text-left md:text-md lg:text-xl ">
+        <div className="z-10 typingText m-2 p-5 border  h-[250px] sm:h-[200px] w-[100%] lg:w-[50%] md:h-[200px] lg:h-[250px] text-left md:text-md lg:text-xl rounded-xl shadow-xl " style={{background:'rgba(128, 128, 128, 0.312)'}}>
 
           <Typewriter
             options={{

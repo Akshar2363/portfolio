@@ -6,12 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Timeline from './components/Timeline';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Projects from './pages/Projects';
+import Skills from './pages/Skills';
+import Timeline from './pages/Timeline';
 
 
 function App() {

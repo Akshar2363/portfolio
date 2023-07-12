@@ -4,9 +4,9 @@ import blackBg1 from '../includes/images/bgBlackMd.png'
 import blackBg2 from '../includes/images/bgBlackSm.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import TsParticles from './TsParticles';
+import TsParticles from '../components/TsParticles';
 import ProfilePic from '../includes/images/anmol.jpg'
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 const About = () => {
 

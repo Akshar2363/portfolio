@@ -4,7 +4,7 @@ import blackBg1 from '../includes/images/bgBlackMd.png'
 import blackBg2 from '../includes/images/bgBlackSm.png'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import TsParticles from './TsParticles';
+import TsParticles from '../components/TsParticles';
 import linkedin from '../includes/icons/linkedin.svg';
 import fb from '../includes/icons/fb.svg';
 import hackerrank from '../includes/icons/hackerrank.svg';
@@ -14,7 +14,7 @@ import leetcode from '../includes/icons/leetcodeColor.svg';
 import whatsapp from '../includes/icons/whatsapp.svg';
 import gmail from '../includes/icons/gmail.svg';
 import { Link } from 'react-router-dom';
-import Alert from './Alert';
+import Alert from '../components/Alert';
 
 import validator from 'validator';
 
@@ -108,11 +108,11 @@ const Contact = () => {
             </div>
 
 
-            <div className="contactPage flex flex-col px-2 md:p-2 md:mx-8">
+            <div className="contactPage flex flex-col px-2 md:p-2 md:mx-8" >
                 <div className="relative -z-10 self-center w-fit contact-head-text text-white text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
                 <div className='flex text-white flex-col lg:flex-row items-center justify-between'>
 
-                    <div className="contact-form border border-white p-2 rounded-xl w-full lg:w-[50%] ">
+                    <div className="contact-form border border-white p-2 rounded-xl w-full lg:w-[50%] " style={{background:'rgba(128, 128, 128, 0.412)'}}>
                         <div className="form-title m-2 p-2 text-2xl text-center">
                             Lets Connect!
                         </div>
