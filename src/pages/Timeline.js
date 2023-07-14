@@ -11,20 +11,11 @@ import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCakeCandles} from '@fortawesome/free-solid-svg-icons';
 import {faGraduationCap} from '@fortawesome/free-solid-svg-icons';
-import ReactVisibilitySensor from 'react-visibility-sensor';
 
 const Timeline = () => {
 
 
-    const showTimeline = (e) => {
-        e.preventDefault();
-        var timeline = document.getElementById(e.target.name);
-        // timeline.classList.toggle('hidden');
-        console.log(e.target.id);
-        console.log(timeline);
-    }
-
-
+    
     return (
         <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
             <TsParticles/>
@@ -58,22 +49,22 @@ const Timeline = () => {
                                     <FontAwesomeIcon icon={faCakeCandles}size='xl'/>
                                 </div>
                                 
-                                <div className="timeline-icon relative bg-slate-300 hover:bg-rose-500 transsition-[1s_ease-in-out] rounded-full w-[40px] h-[40px] flex items-center justify-center">
+                                <div className="timeline-icon relative bg-slate-300 hover:bg-rose-400 transsition-[1s_ease-in-out] rounded-full w-[40px] h-[40px] flex items-center justify-center">
                                     <FontAwesomeIcon icon={faGraduationCap}size='xl'/>
                                 </div>
                                 <div  className="timeline-icon relative bg-slate-300 hover:bg-rose-600 transsition-[1s_ease-in-out] rounded-full w-[40px] h-[40px] flex items-center justify-center">
                                     <FontAwesomeIcon icon={faGraduationCap}size='xl'/>
                                 </div>
-                                <div className="timeline-icon relative bg-slate-300 hover:bg-rose-700 transsition-[1s_ease-in-out] rounded-full w-[40px] h-[40px] flex items-center justify-center">
+                                <div className="timeline-icon relative bg-slate-300 hover:bg-rose-800 transsition-[1s_ease-in-out] rounded-full w-[40px] h-[40px] flex items-center justify-center">
                                     <FontAwesomeIcon icon={faGraduationCap} size='xl' id="UGEdu"/>
                                 </div>
                             </div>
                         </div>
                         <div className='timeline-cards-container flex flex-col h-full p-4 min-h-[100vh]  lg:min-h-[0vh]  lg:w-full lg:flex-row items-start justify-around gap-4 md:gap-2 '>
-                            <TimeLineCard  title={"Birthday & Pry. Education"} desc={"Born on 23rd June 2003.\nCompleted Primary Education from Happy Hours Primary School"} date={"23 Jun 2003 - Dec 2013"}/>
-                            <TimeLineCard  footer={"Percentage : 92.6%"} title={"Matric Education"} desc={"Completed matric education from \n Modern Senior Secondary School, \nGangtok"} date={"Feb 2014 - Mar 2019"}/>
-                            <TimeLineCard  footer={"Percentage : 95%"} title={"Post Matric Education"} desc={"Completed Post Matric Education in Science from \nSir Tashi Namgyal Senior Secondary School, \nGangtok"} date={"Apr 2019 - July 2021"}/>
-                            <TimeLineCard  title={"Under Graduate"} desc={"Currently pursuing B.Tech in Computer Science and Engineering at National Institute of Technology, Sikkim"} date={"Dec 2021 - Present"}/>
+                            <TimeLineCard  location={"Gangtok, Sikkim"} title={"Birthday & Pry. Education"} desc={JSON.stringify({line1:"Born on 23rd June 2003. Completed my primary education from ",line2:"Happy Hours Primary School"})} date={"23 Jun 2003 - Dec 2013"}/>
+                            <TimeLineCard  location={"Gangtok, Sikkim"} footer={"Percentage : 92.6%"} title={"Matric Education"} desc={JSON.stringify({line1:"Completed matric education from ", line2:"Modern Senior Secondary School"})} date={"Feb 2014 - Mar 2019"}/>
+                            <TimeLineCard  location={"Gangtok, Sikkim"} footer={"Percentage : 95%"} title={"Post Matric Education"} desc={JSON.stringify({line1:"Completed post matric education in Science Stream from ", line2:"Sir Tashi Namgyal Senior Secondary School"})} date={"Apr 2019 - July 2021"}/>
+                            <TimeLineCard  location={"Ravangla, Sikkim"} footer={"CGPA : 8.16"} title={"Under Graduate"} desc={JSON.stringify({line1:"Currently pursuing B.Tech in Computer Science and Engineering from", line2:"National Institute of Technology, Sikkim"})} date={"Dec 2021 - Present"} />
                         </div>
                     </div>
                     

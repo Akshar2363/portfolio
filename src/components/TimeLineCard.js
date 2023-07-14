@@ -1,8 +1,11 @@
 import React from 'react'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const TimeLineCard = (props) => {
 
-
+    const description = JSON.parse(props.desc);
+    console.log(description);
   
 
   return (
@@ -10,11 +13,15 @@ const TimeLineCard = (props) => {
         <div className="card-title flex flex-col items-center justify-center text-sm lg:text-xl text-gray-300" >
             {props.title}
         </div>
+        <div className="location text-blue-300">
+            <span><FontAwesomeIcon icon={faLocationDot} /> {props.location}</span>
+        </div>
         <div className="card-date flex flex-col items-center justify-center text-sm lg:text-base text-[#3e98c7]" >
             {props.date}
         </div>
         <div className="card-desc flex flex-col items-center justify-center text-sm lg:text-base">
-            {props.desc}
+            <div>{description.line1}</div>
+            <div className='text-green-400'>{description.line2}</div>
         </div>
         <div className="card-footer flex flex-col items-center justify-center text-sm lg:text-base text-violet-400">
             {props.footer}
