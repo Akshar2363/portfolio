@@ -50,7 +50,7 @@ const About = () => {
 
                     <div className="about-body lg:pl-4 py-2 lg:w-[50%] text-justify">
 
-                        <div className="text-green-400 md:text-base">I am an aspiring
+                        <div className="text-green-400 text-sm md:text-lg">I am an aspiring
                             <span className='text-violet-400'> computer programmer, </span>
                             with proven problem-solving and troubleshooting skills.</div>
                         <div className='text-green-400 md:text-base'>I am currently pursuing my undergraduate degree in
@@ -58,26 +58,28 @@ const About = () => {
                             at
                             <span className='text-red-500'> NIT Sikkim.</span>
                         </div><br/>
-                        <div className="text-green-400 md:text-base">Recently, I have been working on
+                        <div className="text-green-400 text-sm md:text-lg">Recently, I have been working on
                             <span className='text-violet-400'> full-stack web development </span>
                             technologies and projects through
                             <span className='text-yellow-600'> LAMP </span>
                             and
                             <span className='text-yellow-600'> MERN </span>
-                            stack.</div>
-                            <br />
-                        <div className="text-green-400 md:text-base">
-                            Moreover, I have prior experience of working with
-                            <span className='text-violet-400'> web development </span>
-                            and design as a member of
-                            <span className='text-red-500' > Web Development Cell, NIT Sikkim. </span>
+                            stack.
                         </div>
+                            
 
                     </div>
 
                     <div className=" lg:pl-4 py-2 lg:w-[50%] text-justify pb-10">
                         
-                        <div className="text-green-600 md:text-base">
+                        <div className="text-green-400 text-sm md:text-lg">
+                            Moreover, I have prior experience of working with
+                            <span className='text-violet-400'> web development </span>
+                            and design as a member of
+                            <span className='text-red-500' > Web Development Cell, NIT Sikkim. </span>
+                        </div>
+                    <br />
+                        <div className="text-green-600 text-sm md:text-lg">
                             I am seeking an entry-level
                             <span className='text-orange-400'> internship opportunities </span>
                             to continue expanding my knowledge of different languages and systems and get more experience in
