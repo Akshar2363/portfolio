@@ -13,7 +13,7 @@ const Home = () => {
 
     <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
       <TsParticles />
-      <div className={`z-10 flex flex-col justify-end md:bg-[url('${blackBg1}')] bg-[url('${blackBg2}')] backdrop-blur-xl h-[200px] lg:bg-cover bg-left text-white`}>
+      <div className={`z-10 flex flex-col justify-end md:bg-[url('${blackBg1}')] bg-[url('${blackBg2}')] bg-black h-[200px] lg:bg-cover bg-left text-white`}>
 
         <div className="path p-10">
           {/* <p>Home &nbsp;<FontAwesomeIcon icon={faAngleRight}/> &nbsp; About</p> */}
@@ -25,22 +25,29 @@ const Home = () => {
         </div>
 
       </div>
-      <div className='z-10 text-white px-4 md:p-2 md:mx-8 flex flex-col lg:flex-row items-center justify-between'>
+      <div className='z-10 text-white px-4 md:p-2 md:mx-8 flex flex-col xl:flex-row items-center justify-between'>
 
-        <div className="programming-img w-full lg:w-[50%] p-4 mb-8 md:m-0 flex flex-col items-start justify-center h-fit">
-          <div className='text-md lg:text-2xl text-xl inline-flex'><span className='text-rose-300'>Hey There!</span><div className='text-3xl wave h-fit w-fit'>👋</div></div>
+        <div className="programming-img w-full xl:w-[50%] p-4 mb-8 md:m-0 flex flex-col items-start gap-4 justify-center h-fit">
+          <div className='text-md lg:text-2xl text-xl inline-flex'><span className='text-blue-300'>Hey There!</span><div className='text-3xl wave h-fit w-fit'>👋</div></div>
           <h2 className='text-md lg:text-2xl text-xl'><span className='text-slate-300'>This is, </span></h2>
           <h2 className='text-md text-slate-300 lg:text-7xl text-5xl'><span className='text-yellow-500'>Anmol </span> <span className='text-yellow-700'>Sharma</span></h2>
           <h2 className='text-md text-blue-300 lg:text-2xl text-xl'>I am a 3<sup>rd</sup>-year student at NIT Sikkim</h2>
           <h2 className='text-md text-slate-300 lg:text-xl text-lg'>I am a web developer with good programming skills, and I am seeking internship opportunities...</h2>
         </div>
 
-        <div className="z-10 typingText m-2 p-5 border  h-[250px] sm:h-[200px] w-[100%] lg:w-[50%] md:h-[200px] lg:h-[250px] text-left md:text-md lg:text-xl rounded-xl shadow-xl " style={{background:'rgba(128, 128, 128, 0.312)'}}>
+        <div className="z-10 m-2 border  h-[300px] sm:h-[250px] w-[100%] xl:w-[50%] md:h-[250px] lg:h-[300px] text-left md:text-md lg:text-xl rounded-xl shadow-xl " style={{background:'rgba(128, 128, 128, 0.312)'}}>
+
+          <div style={{background:'rgba(128, 128, 128, 0.5)'}} className="head gap-4 rounded-t-xl shadow-xl flex flex-row-reverse items-center justify-start p-4 bg-grey-500 w-full">
+             <button className="rounded-[50%] flex items-center justify-center text-center bg-red-500 w-[20px] h-[20px] text-xs">x</button>
+             <button className="rounded-[50%] flex items-center justify-center text-center bg-green-500 w-[20px] h-[20px] text-xs">-</button>
+          </div>
+
+          <div className="typingText p-2">
 
           <Typewriter
             options={{
               loop: false,
-              cursor: "_",
+              cursor: "|",
             }}
 
             onInit={(typewriter) => {
@@ -62,6 +69,7 @@ const Home = () => {
 
             }}
           />
+          </div>
 
 
         </div>
@@ -69,8 +77,6 @@ const Home = () => {
 
       </div>
       <div className="pl-4 md:pl-8 pb-12 ">
-        <div className="text-slate-300 my-2 lg:text-2xl text-lg">Know More About Me! </div>
-        <div className='z-10'><Link to="/about" className=' flex items-center justify-center p-3 w-[150px] relative text-xl border border-blue-400 text-blue-400 hover:bg-blue-800 hover:text-white p-2 rounded-lg'>About</Link></div>
         <div className="text-slate-300 my-2 pb-2 lg:text-2xl text-lg">Have a look at my <span className='text-blue-400'>Resume...</span> </div>
         <div className='z-10'><Link to={Resume} target="_blank" className=' flex items-center justify-center p-3 w-[150px] relative text-xl border border-blue-400 text-blue-400 hover:bg-blue-800 hover:text-white p-2 rounded-lg'>Resume</Link></div>
       </div>
