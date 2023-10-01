@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     
       <div className='fixed z-40 md:w-[200px] w-full'>
-        <div className="sticky navbar bg-slate-800 flex items-center md:justify-content-start md:items-start justify-between pr-2 md:pr-0 md:justify-center h-[80px] md:h-[100vh] shadow-sm md:shadow-lg shadow-gray-800">
+        <div className="sticky navbar bg-slate-800 flex items-center md:justify-content-start md:items-start justify-between px-2 md:px-0 md:justify-center h-[80px] md:h-[100vh] shadow-sm md:shadow-lg shadow-gray-800">
           <Link className="md:hidden"to="/"><img className='h-[50px]' src={logo} alt="" /></Link>
             <div className="flex flex-col py-4 px-2 md:hidden" id="menu-btn" onClick={toggleMenu}>
                 <div className='bg-red-800 rounded-xl h-[5px] w-[40px] bar1 m-0.5'></div>

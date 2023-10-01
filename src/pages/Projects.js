@@ -91,16 +91,16 @@ const Projects = () => {
             </div>
 
 
-            <div className={`projects p-4 pb-10`}>
+            <div className={`flex flex-col gap-4 projects p-4 pb-10`}>
                 <div className={`projects-title text-center items-center justify-center w-full text-xl md:text-4xl text-white p-4`}>Here are my projects...</div>
                 <div className="project-cards flex flex-col gap-5 p-0 md:pl-5 lg:p-0">
                     <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
                         <ProjectCard project={projects.project1} />
                         <ProjectCard project={projects.project2} />
                     </div>
-                    <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
+                    {/* <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
                         <ProjectCard project={projects.project3} />
-                    </div>
+                    </div> */}
                     
                 </div>
             </div>
