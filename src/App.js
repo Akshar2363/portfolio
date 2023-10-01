@@ -18,11 +18,11 @@ function App() {
 
  
   return (
-    <div className={`App `}>
+    <div className={`App flex flex-col md:flex-row `}>
       <Router>
         <Navbar/>
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
+          <Route index path="/" element={<Home/>}/>
           <Route exact path="/about" element={<About/>}/>
           <Route exact path="/timeline" element={<Timeline/>}/>
           <Route exact path="/skills" element={<Skills/>}/>

@@ -20,8 +20,7 @@ const ProjectsCard = (props) => {
 
 
     return (
-        <div>
-            <div className="project-card flex lg:h-[250px] flex-col sm:flex-row sm:max-w-[700px] shadow-xl rounded-xl overflow-hidden z-10 text-white border border-white">
+            <div className="project-card flex lg:h-[275px] flex-col sm:flex-row sm:min-w-[40%] sm:max-w-[700px] shadow-xl rounded-xl overflow-hidden z-10 text-white border border-white">
                 <div className="meta h-[200px] relative z-0 sm:basis-[50%] sm:h-auto text-sm overflow-hidden"> 
                     <div className="photo"  style={myComponentStyle}></div>
                     <div className="details absolute flex flex-col top-0 bottom-0 left-[-100%] justify-around p-4 w-full gap-1">
@@ -32,8 +31,8 @@ const ProjectsCard = (props) => {
                       )}
                       </div>
                       <div className="flex flex-row gap-2 ">
-                        {props.project.githubLink && <Link to={props.project.githubLink}><img src={github} alt={props.project.name} width='60px'/> </Link>}
-                        {props.project.hostLink && <Link to={props.project.hostLink}><img src={props.project.logo} alt={props.project.name} width='60px'/> </Link>}
+                        {props.project.githubLink && <Link to={props.project.githubLink}><img src={github} alt={props.project.name} width='45px'/> </Link>}
+                        {props.project.hostLink && <Link to={props.project.hostLink}><img src={props.project.logo} alt={props.project.name} width='45px'/> </Link>}
                       </div>
                     </div>
                 </div>
@@ -44,14 +43,12 @@ const ProjectsCard = (props) => {
                     <button className='underline' id="dot1"></button>
                     <button className='underline' id="dot2"></button>
                     <button className='underline' id="dot3"></button>
-                    <ul className="description p-2">
+                    <ul className="description flex flex-col p-2 text-xs xl:text-sm gap-1">
                       {props.project.desc.line1 && <li>{props.project.desc.line1}</li>}
                       {props.project.desc.line2 && <li>{props.project.desc.line2}</li>}
                     </ul>
-                  
                 </div>
             </div>
-        </div>
 
 
     )

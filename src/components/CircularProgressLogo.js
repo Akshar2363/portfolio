@@ -17,7 +17,7 @@ const CircularProgressLogo = (props) => {
             Percentage = isVisible ? props.percentage : 0;
 
            return (
-            <div className={`w-[20vw] sm:w-[15vw] lg:w-[120px] relative bg-[url(${props.logo})] bg-contain hover:bg-none transition-[1s_ease-in-out] bg-clip-padding bg-[length:50%] bg-no-repeat bg-center`}>
+            <div className={`w-[20vw] sm:w-[15vw] lg:w-[120px] relative bg-[url(${props.logo})] bg-[length:50%] hover:bg-none transition-[1s_ease-in-out] bg-clip-padding  bg-no-repeat bg-center`}>
              <CircularProgressbarWithChildren value={Percentage} styles={{
                         // Customize the root svg element
                         root: {},
@@ -57,7 +57,6 @@ const CircularProgressLogo = (props) => {
                     }}>
                     <div className={`absolute -z-1 w-full h-full flex flex-col items-center justify-center progressPercentage  opacity-${PercentageOpacity} hover:opacity-${100-PercentageOpacity} transition-[1s_ease-in-out]`}>
 
-                      <div className='text-[15px] sm:text-xs md:text-2xl'>{props.percentage}%</div>
                       <div className='lg:flex hidden'>{props.text}</div>
                     </div>
              </CircularProgressbarWithChildren>

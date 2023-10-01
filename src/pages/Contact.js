@@ -88,7 +88,7 @@ const Contact = () => {
 
 
     return (
-        <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
+        <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
             <TsParticles/>
 
             <div className={
@@ -109,19 +109,19 @@ const Contact = () => {
 
 
             <div className="contactPage flex flex-col px-2 md:p-2 md:mx-8" >
-                <div className="relative -z-10 self-center w-fit contact-head-text text-white text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
+                <div className="relative -z-10 text-center self-center w-fit contact-head-text text-white text-xl md:text-3xl py-4 px-4 animate-pulse">Reach Out to Me!</div>
                 <div className='flex text-white flex-col lg:flex-row items-center justify-between'>
 
                     <div className="contact-form border border-white p-2 rounded-xl w-full lg:w-[50%] " style={{background:'rgba(128, 128, 128, 0.412)'}}>
                         <div className="form-title m-2 p-2 text-2xl text-center">
-                            Lets Connect!
+                            Send Me a Message!
                         </div>
                         <hr/>
                         <form id="contactForm" className="flex flex-col my-2 items-center just0fy-center" name="submit-to-google-sheet">
-                            <input autoComplete="off" onChange = {()=>onChange("Name")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Name" name="Name" type="text" placeholder="Name"/>
-                            <input autoComplete="off" onChange = {()=>onChange("Email")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Email" name="Email" type="email" placeholder="Email"/>
-                            <input autoComplete="off" onChange = {()=>onChange("Contact")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Contact" name="Contact" type="number" placeholder="Contact"/>
-                            <input autoComplete="off" onChange = {()=>onChange("Message")} className='z-10 text-black m-2 w-full p-2 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Message" name="Message" type="text" placeholder="Message"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Name")} className='z-10 text-black m-2 w-full p-4 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Name" name="Name" type="text" placeholder="Name"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Email")} className='z-10 text-black m-2 w-full p-4 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Email" name="Email" type="email" placeholder="Email"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Contact")} className='z-10 text-black m-2 w-full p-4 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Contact" name="Contact" type="number" placeholder="Contact"/>
+                            <input autoComplete="off" onChange = {()=>onChange("Message")} className='z-10 text-black m-2 w-full p-4 bg-gray-400 placeholder-gray-800 rounded-xl hover:bg-gray-300 ' id="Message" name="Message" type="text" placeholder="Message"/>
                             {!alert && <button type="submit" id="contactFormSubmit" className='z-10 border border-white w-[100px] text-wihte p-2 rounded-xl hover:bg-gray-800'
                                 onClick={submitForm}>Send</button>}
                         </form>

@@ -12,7 +12,7 @@ const About = () => {
 
 
     return (
-        <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
+        <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
             <TsParticles/>
 
             <div className={
@@ -36,8 +36,8 @@ const About = () => {
 
             <div className='text-white px-4 md:p-2 md:mx-8 flex flex-col items-center justify-between'>
 
-                <header className=' absolute top-[100px] md:top-[80px] right-0 md:right-5 p-4 flex z-10 items-center justify-center '>
-                    <img className="aboutImg border-2 shadow-xl rounded-full border-slate-500 z-10 w-[150px] md:w-[200px] hover:scale-105 duration-500"
+                <header className='absolute top-[125px] md:top-[80px] right-0 md:right-5 p-4 flex z-10 items-center justify-center '>
+                    <img className="aboutImg border-2 shadow-xl rounded-full border-slate-500 z-10 w-[100px] md:w-[200px] hover:scale-105 duration-500"
                         src={ProfilePic}
                         alt=""/>
                 </header>
@@ -46,46 +46,18 @@ const About = () => {
                     <div className="text-green-500 text-4xl">I am <span className='text-yellow-400'> Anmol!</span>
                     </div>
                 </div>
-                <div className='flex flex-col md:flex-row md:gap-4'>
+                <div className='flex flex-col md:flex-row md:gap-4 text-base md:text-lg lg:text-2xl text-white '>
 
-                    <div className="about-body lg:pl-4 py-2 lg:w-[50%] text-justify">
-
-                        <div className="text-green-400 text-sm md:text-lg">I am an aspiring
-                            <span className='text-violet-400'> computer programmer, </span>
-                            with proven problem-solving and troubleshooting skills.</div>
-                        <div className='text-green-400 md:text-base'>I am currently pursuing my undergraduate degree in
-                            <span className='text-sky-400'> Computer Science and Engineering </span>
-                            at
-                            <span className='text-red-500'> NIT Sikkim.</span>
-                        </div><br/>
-                        <div className="text-green-400 text-sm md:text-lg">Recently, I have been working on
-                            <span className='text-violet-400'> full-stack web development </span>
-                            technologies and projects through
-                            <span className='text-yellow-600'> LAMP </span>
-                            and
-                            <span className='text-yellow-600'> MERN </span>
-                            stack.
-                        </div>
-                            
+                    <div className="about-body lg:pl-4 py-2 md:w-[50%] text-justify flex flex-col gap-3 ">
+                        <div>I am a promising third-year student at the prestigious National Institute of Technology, Sikkim, pursuing a B.Tech in Computer Science and Engineering.</div>
+                        <div>Throughout my academic journey, I have demonstrated a strong aptitude for computer science concepts, consistently achieving good results in my coursework. Beyond the classroom, I have actively engaged in extracurricular activities, showcasing a well-rounded skill set that extends beyond technical expertise.</div>
+                        <div>In addition to their academic pursuits, I actively sought opportunities to apply my knowledge in real-world scenarios through personal projects and collaborative initiatives. I have consistently demonstrated a proactive and hands-on approach to problem-solving.</div>
 
                     </div>
 
-                    <div className=" lg:pl-4 py-2 lg:w-[50%] text-justify pb-10">
-                        
-                        <div className="text-green-400 text-sm md:text-lg">
-                            Moreover, I have prior experience of working with
-                            <span className='text-violet-400'> web development </span>
-                            and design as a member of
-                            <span className='text-red-500' > Web Development Cell, NIT Sikkim. </span>
-                        </div>
-                    <br />
-                        <div className="text-green-600 text-sm md:text-lg">
-                            I am seeking an entry-level
-                            <span className='text-orange-400'> internship opportunities </span>
-                            to continue expanding my knowledge of different languages and systems and get more experience in
-                            <span className='text-violet-400'> software development. </span>
-                        </div>
-
+                    <div className=" lg:pl-4 py-2 md:w-[50%] text-justify pb-10 flex flex-col gap-3">
+                        <div>As a forward-looking individual, I am not only dedicated to mastering the foundational principles of computer science but also passionate about staying abreast of the latest industry trends. </div>
+                        <div>With a solid foundation in computer science, a proven track record of academic achievement, and a genuine enthusiasm for innovation, I am poised to make a significant impact in the realm of Computer Science and Engineering.</div>
                     </div>
                 </div>
 

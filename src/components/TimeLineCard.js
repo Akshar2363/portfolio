@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const TimeLineCard = (props) => {
 
     const description = JSON.parse(props.desc);
-    console.log(description);
-  
 
   return (
     <div className={`hover:scale-105 lg:scale-95 shadow-xl border border-white transition-[1s_ease-in-out] ml-3 lg:ml-0 lg:min-h-[300px] timelineCard flex flex-col items-center justify-around text-white text-center  w-full lg:w-[50%] p-4 mx-4 lg:m-0 rounded-xl gap-3`} style={{background:'rgba(128, 128, 128, 0.412)'}}>

@@ -29,7 +29,7 @@ import Footer from '../components/Footer';
 const Skills = () => {
 
     return (
-        <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
+        <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
             <TsParticles/>
             <div className={
                 `z-10 flex flex-col justify-end md:bg-[url('${blackBg1}')] bg-[url('${blackBg2}')] backdrop-blur-xl h-[200px] lg:bg-cover bg-left text-white`

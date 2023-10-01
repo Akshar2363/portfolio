@@ -52,11 +52,26 @@ const Projects = () => {
             ],
             hostLink:"https://udgam.nitsikkim.ac.in/udgam23/",
             logo:udgamLogo
+        },
+        project3:{
+            id:3,
+            title:"Personal Portfolio",
+            subtitle:"Know About Me",
+            image:udgam1,
+            desc: {
+                line1:"Worked on building my own personal portfolio.",
+                line2:"Includes my skills, resume and a contact page.",
+            },
+            techStack:[
+                "ReactJS",
+                "TailwindCSS",
+            ],
+            
         }
     }
 
   return (
-    <div className="relative top-[75px] md:top-0 md:left-[15%] md:w-[85%]">
+    <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
             <TsParticles/>
 
             <div className={
@@ -78,10 +93,13 @@ const Projects = () => {
 
             <div className={`projects p-4 pb-10`}>
                 <div className={`projects-title text-center items-center justify-center w-full text-xl md:text-4xl text-white p-4`}>Here are my projects...</div>
-                <div className="project-cards flex flex-col gap-3 p-0 md:pl-5 lg:p-0">
-                    <div className={`flex flex-col lg:flex-row gap-3 items-around justify-center`}>
+                <div className="project-cards flex flex-col gap-5 p-0 md:pl-5 lg:p-0">
+                    <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
                         <ProjectCard project={projects.project1} />
                         <ProjectCard project={projects.project2} />
+                    </div>
+                    <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
+                        <ProjectCard project={projects.project3} />
                     </div>
                     
                 </div>
