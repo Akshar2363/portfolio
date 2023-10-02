@@ -19,10 +19,10 @@ const TsParticles = () => {
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}
-            options={{fpsLimit: 60,
+            options={{fpsLimit: 50,
                 particles: {
                   number: {
-                    value: 80,
+                    value: 40,
                     density: {
                       enable: true,
                       value_area: 800

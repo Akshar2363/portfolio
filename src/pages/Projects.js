@@ -10,7 +10,9 @@ import Footer from '../components/Footer';
 import todoList1 from '../includes/images/todolistImg1.png'
 import todoListLogo from '../includes/images/todolistLogo.png'
 import udgam1 from '../includes/images/udgamImg1.png'
+import portfolioImg1 from '../includes/images/portfolioImg1.png'
 import udgamLogo from '../includes/images/udgamLogo.png'
+import newsInsightImg from '../includes/images/newsInsightImg.png'
 const Projects = () => {
 
  
@@ -57,7 +59,7 @@ const Projects = () => {
             id:3,
             title:"Personal Portfolio",
             subtitle:"Know About Me",
-            image:udgam1,
+            image:portfolioImg1,
             desc: {
                 line1:"Worked on building my own personal portfolio.",
                 line2:"Includes my skills, resume and a contact page.",
@@ -66,6 +68,23 @@ const Projects = () => {
                 "ReactJS",
                 "TailwindCSS",
             ],
+            
+            
+        },
+        project4:{
+            id:4,
+            title:"News Insight",
+            subtitle:"News App",
+            image:newsInsightImg,
+            desc: {
+                line1:"News app built using NewsAPI and ReactJS",
+                line2:"Contains functionality of filtering news based on categores",
+            },
+            techStack:[
+                "ReactJS",
+                "Bootstrap",
+            ],
+            githubLink:"https://github.com/Akshar2363/newsInsight",
             
         }
     }
@@ -91,16 +110,17 @@ const Projects = () => {
             </div>
 
 
-            <div className={`flex flex-col gap-4 projects p-4 pb-10`}>
+            <div className={`flex flex-col items-around gap-4 projects p-4 pb-10`}>
                 <div className={`projects-title text-center items-center justify-center w-full text-xl md:text-4xl text-white p-4`}>Here are my projects...</div>
-                <div className="project-cards flex flex-col gap-5 p-0 md:pl-5 lg:p-0">
+                <div className="project-cards flex flex-col items-around gap-5 p-0 md:pl-5 lg:p-0">
                     <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
                         <ProjectCard project={projects.project1} />
                         <ProjectCard project={projects.project2} />
                     </div>
-                    {/* <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
-                        <ProjectCard project={projects.project3} />
-                    </div> */}
+                    <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
+                        {/* <ProjectCard project={projects.project3} /> */}
+                        <ProjectCard project={projects.project4} />
+                    </div>
                     
                 </div>
             </div>
