@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 const About = () => {
 
     return (
+        <div>
         <div className="w-full mt-[80px] ml-0 md:ml-[200px] md:mt-0">
             <TsParticles/>
 
@@ -153,8 +154,10 @@ const About = () => {
           </div>
         </div>
       </div>
-
+      <div>
       <Footer />
+     </div>
+    </div>
     </div>
   );
 };
