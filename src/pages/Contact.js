@@ -20,7 +20,7 @@ import validator from 'validator';
 
 const Contact = () => {
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxJ2EmYnzNIN_aXziTJFfG0GHstbpUu0cSF4aZ3gBRoHeVrii-w7wizlQcceUgdA4A7/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxvq8bHO-s5UZ6zPKrzeF_RXnbZSEggG3ziNstkHMdNMDV2KHFNste2Djo_bcxLud7G/exec'
 
     var [alert, setAlert] = useState(false);
     var [alertMsg, setAlertMsg] = useState("");
