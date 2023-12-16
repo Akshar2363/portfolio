@@ -92,7 +92,7 @@ const Projects = () => {
             subtitle:"File Dispatch Management System",
             image:fdms,
             desc: {
-                line1:"A File Management ans Sharing Application",
+                line1:"A mile management and sharing Application",
                 line2:"Contains functionality of uploading and sharing files to friends.",
             },
             techStack:[
