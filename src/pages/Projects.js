@@ -13,6 +13,7 @@ import udgam1 from '../includes/images/udgamImg1.png'
 import portfolioImg1 from '../includes/images/portfolioImg1.png'
 import udgamLogo from '../includes/images/udgamLogo.png'
 import newsInsightImg from '../includes/images/newsInsightImg.png'
+import fdms from '../includes/images/fdms.png'
 const Projects = () => {
 
  
@@ -67,9 +68,7 @@ const Projects = () => {
             techStack:[
                 "ReactJS",
                 "TailwindCSS",
-            ],
-            
-            
+            ],            
         },
         project4:{
             id:4,
@@ -85,6 +84,26 @@ const Projects = () => {
                 "Bootstrap",
             ],
             githubLink:"https://github.com/Akshar2363/newsInsight",
+            
+        },
+        project5:{
+            id:5,
+            title:"FileShare",
+            subtitle:"File Dispatch Management System",
+            image:fdms,
+            desc: {
+                line1:"A File Management ans Sharing Application",
+                line2:"Contains functionality of uploading and sharing files to friends.",
+            },
+            techStack:[
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "PHP",
+                "MySQL",
+                "Tailwind CSS"
+            ],
+            githubLink:"https://github.com/Akshar2363/fileDispatchManagementSystem",
             
         }
     }
@@ -120,6 +139,7 @@ const Projects = () => {
                     <div className={`flex flex-col lg:flex-row gap-5 items-around justify-around`}>
                         {/* <ProjectCard project={projects.project3} /> */}
                         <ProjectCard project={projects.project4} />
+                        <ProjectCard project={projects.project5} />
                     </div>
                     
                 </div>
